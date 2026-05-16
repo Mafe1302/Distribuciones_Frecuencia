@@ -1,0 +1,41 @@
+nombre: Autodeploy to GitHub Pages
+
+Sobre:
+ Empuja:
+ Sucursales:
+ - Maestro
+
+Empleos:
+ Despliegue:
+ Funciona: Ubuntu-Latest
+
+ Pasos:
+ - nombre: Código de pago
+ Usos: Acciones/checkout@v2
+ con:
+ profundidad de obtención: 0
+
+ - nombre: Configurar Git
+ Corre: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+ git remote set-url origin https://x-access-token:${{ secrets. GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+ - name: Eliminar rama de páginas gh desde el remoto
+ Corre: |
+ git push origin --delete gh-pages || Cierto
+
+ - nombre: Crear nueva rama gh-pages
+ Corre: |
+ Git Checkout --huérfanos gh-pages
+
+ - name: Añadir todos los archivos a gh-pages
+ Corre: |
+        git add --all
+ git commit -m "Desplegar en gh-pages"
+
+ - nombre: Push a la rama gh-pages
+ Corre: |
+ Origen GIT Push GH-Pages --Force
+      env:
+ GITHUB_TOKEN: ${{ secretos. GITHUB_TOKEN }}
