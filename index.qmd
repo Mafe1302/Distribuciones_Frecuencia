@@ -354,7 +354,7 @@ Componentes de una Tabla de Frecuencia
 
 Representa el número de veces que aparece un valor.
 
-Fórmula
+Fórmula Nueva
  
 $$f_i = \text{Número de observaciones del valor } i$$
 
