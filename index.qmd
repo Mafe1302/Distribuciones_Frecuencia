@@ -3808,7 +3808,7 @@ ggplot(data_porcentaje, aes(x = SECTOR, y = porcentaje, fill = NIVEL)) +
   geom_bar(stat = "identity", position = "dodge") +  # Usar "stack" si deseas barras apiladas
 
  
-  labs(title = "Distribución porcentual del desempeño por en el Sector Laboral",
+labs(title = "Distribución porcentual del desempeño por en el Sector Laboral",
 
        x = "Sector Laboral",
 
